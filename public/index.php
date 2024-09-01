@@ -2,5 +2,4 @@
 
 include '../config/routes.php';
 
-echo 'PHP OO';
-
+echo 'Testando GitHub para o Projeto php-merenda (PHP OO)';
