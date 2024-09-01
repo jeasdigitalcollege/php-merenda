@@ -1,3 +1,6 @@
 <?php
 
-echo "PHP OO";
+include '../config/routes.php';
+
+echo 'PHP OO';
+
