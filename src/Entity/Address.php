@@ -24,10 +24,92 @@ namespace App\Entity;
 
 class Address
 {
-    public string $logradouro;
-    public string $numero;
-    public string $zipcode;
-    public string $district;
-    public string $city;
-    public string $state;
+    private string $street;
+    private string $number;
+    private string $zipcode;
+    private string $district;
+    private string $city;
+    private string $state;
+
+    public function full() : string
+    {
+        return "{$this->street}, {$this->number} - CEP: {$this->zipcode} {$this->district} {$this->city}-{$this->state}";
+    }
+
+    public function getStreet() : string
+    {
+        return $this->street;
+    }
+
+    public function setStreet(string $number) : void
+    {
+        $this->number = $number;
+    }
+
+    public function getNumber() : string
+    {
+        return $this->number;
+    }
+
+    public function setNumber(string $number) : void
+    {
+        $this->number = $number;
+    }
+
+    public function getZipCode(string $zipcode) : string
+    {
+        return $this->zipcode;
+    }
+
+    public function setZipCode(string $zipcode) : void
+    {
+        $this->zipcode = $zipcode;
+    }
+
+    public function getdistrict() : string
+    {
+        return $this->district;
+    }
+
+    public function setDistrict(string $district) : void
+    {
+        $this->district = $district;
+    }
+
+    public function getcity() : string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city) : void
+    {
+        $this->city = $city;
+    }
+
+    public function getstate() : string
+    {
+        return $this->state;
+    }
+
+    public function setState(string $state) : void
+    {
+        $this->state = $state;
+    }
+
+
 }
+
+// Criar uma instância da classe Address
+$address = new Address();
+
+// Definir o valor do atributo street usando o método setStreet
+$address->setStreet('Rua das Flores');
+$address->setNumber('123');
+$address->setZipCode('60.170-040');
+$address->setDistrict('Meireles');
+$address->setCity('Fortaleza');
+$address->setState('CE');
+
+
+// Imprimir o valor do atributo street usando o método getStreet
+echo $address->getStreet() . "\n";  // Saída: Rua das Flores
