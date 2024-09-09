@@ -1,6 +1,10 @@
 <?php
 
 /* 
+    Class: Address.php
+*/
+
+/* 
     A declaração declare(strict_types=1); em PHP serve para ativar o modo de tipagem estrita em um arquivo PHP. Isso significa que o PHP passará a verificar de forma mais rigorosa a compatibilidade entre os tipos de dados declarados nas suas funções e os valores que você passa para elas.
     O valor "1" ativa o modo estrito (boleano).
     Recomenda-se colocar declare(strict_types=1); no início do arquivo PHP, antes de qualquer outra declaração. Dessa forma, o modo estrito será aplicado a todo o código do arquivo.
@@ -13,7 +17,7 @@ declare(strict_types=1);
     App = Aplicação Principal
     Entity = classes dentro no namespace que representam Entidades
     Em projetos grandes, é comum ter classes com o mesmo nome em diferentes partes do código. Os namespaces ajudam a evitar esses conflitos, garantindo que cada classe tenha um nome único no contexto do projeto.
-    O comando namespace App\Entity; define um espaço de nomes para o código que se segue, organizando-o em uma hierarquia lógica e evitando conflitos de nomes. É uma prática recomendada para projetos PHP de médio e grande porte.
+    O comando namespace App\Entity; Define um espaço de nomes para o código que se segue, organizando-o em uma hierarquia lógica e evitando conflitos de nomes. É uma prática recomendada para projetos PHP de médio e grande porte.
 */
 
 namespace App\Entity;
@@ -24,6 +28,7 @@ namespace App\Entity;
 
 class Address
 {
+    // Define propriedades privadas
     private string $street;
     private string $number;
     private string $zipcode;
@@ -31,85 +36,84 @@ class Address
     private string $city;
     private string $state;
 
-    public function full() : string
+    // Método Construtor da classe "Address". 
+    // O método é executado automaticamente ao instanciar um objeto
+    public function __construct(string $street, string $number, string $zipcode, string $district, string $city, string $state)
     {
-        return "{$this->street}, {$this->number} - CEP: {$this->zipcode} {$this->district} {$this->city}-{$this->state}";
+        // Inicializa as Propriedades da Classe
+        $this->street = $street;
+        $this->number = $number;
+        $this->zipcode = $zipcode;
+        $this->district = $district;
+        $this->city = $city;
+        $this->state = $state;
     }
 
-    public function getStreet() : string
+    // Métodos de acesso e modificação às propriedades privadas da classe, 
+    // Seguindo o padrão de encapsulamento. 
+    public function getStreet(): string
     {
         return $this->street;
     }
 
-    public function setStreet(string $number) : void
+    public function setStreet(string $street): void
     {
-        $this->number = $number;
+        $this->street = $street;
     }
 
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
 
-    public function setNumber(string $number) : void
+    public function setNumber(string $number): void
     {
         $this->number = $number;
     }
 
-    public function getZipCode(string $zipcode) : string
+    public function getZipCode(): string
     {
         return $this->zipcode;
     }
 
-    public function setZipCode(string $zipcode) : void
+    public function setZipCode(string $zipcode): void
     {
         $this->zipcode = $zipcode;
     }
 
-    public function getdistrict() : string
+    public function getdistrict(): string
     {
         return $this->district;
     }
 
-    public function setDistrict(string $district) : void
+    public function setDistrict(string $district): void
     {
         $this->district = $district;
     }
 
-    public function getcity() : string
+    public function getcity(): string
     {
         return $this->city;
     }
 
-    public function setCity(string $city) : void
+    public function setCity(string $city): void
     {
         $this->city = $city;
     }
 
-    public function getstate() : string
+    public function getstate(): string
     {
         return $this->state;
     }
 
-    public function setState(string $state) : void
+    public function setState(string $state): void
     {
         $this->state = $state;
     }
 
-
+    // Método Público que retorna uma string formatada com o endereço completo
+    public function full(): string
+    {
+        return "{$this->street}, {$this->number} - CEP: {$this->zipcode} {$this->district} {$this->city}-{$this->state}";
+    }
 }
-
-// Criar uma instância da classe Address
-$address = new Address();
-
-// Definir o valor do atributo street usando o método setStreet
-$address->setStreet('Rua das Flores');
-$address->setNumber('123');
-$address->setZipCode('60.170-040');
-$address->setDistrict('Meireles');
-$address->setCity('Fortaleza');
-$address->setState('CE');
-
-
-// Imprimir o valor do atributo street usando o método getStreet
-echo $address->getStreet() . "\n";  // Saída: Rua das Flores
