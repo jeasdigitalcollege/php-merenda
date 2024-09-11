@@ -1,9 +1,25 @@
-# 
+# Gerenciamento de Merendas
+
+```mermaid
+flowchart TD
+    Cliente --URL--> index.php
+    index.php <--> r[routes]
+    view <--> editar.php
+    view <--> listar.php
+    view <--> cadastrar.php
+    c[conexao] --> controller
+    r --> controller
+    controller --> view
+```
+
+## Estrutura inicial das classes/tabelas
+
+```mermaid
 classDiagram
     Category 
     Product <|-- Category
     Customer <|-- Address
-    Address
+    Address 
     Order <|-- Item
     Order <|-- Customer
     Item <|-- Product
@@ -19,16 +35,16 @@ classDiagram
     }
 
     class Category {
-        - nome (Bebidas, Pizzas, Salgados, Doces)
-        - description (texto longo )
+        - name (Bebidas, Pizzas, Salgados, Docs)
+        - description (texto longo)
         - image (url da imagem)
     }
 
     class Product {
         - name
-        - Categoria
-        - description
-        - images 
+        - Category
+        - images
+        - quantity
         - price
         - available
     }
@@ -39,11 +55,12 @@ classDiagram
         - email
         - phone
         - photo
-
+        - status
     }
-
+    
     class Address {
         - city
         - street
     }
-
+[EOF]
+```

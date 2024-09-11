@@ -1,5 +1,10 @@
 <?php
 
-include '../config/routes.php';
+$routes = include '../config/routes.php';
 
-echo 'Testando GitHub para o Projeto php-merenda (PHP OO)';
+$url = $_SERVER['REQUEST_URI'];
+
+$controller = $routes[$url][0];
+$method = $routes[$url][1];
+
+(new $controller())->$method();
