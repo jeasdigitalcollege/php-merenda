@@ -1,1 +1,1 @@
-<h1>Listar Categorias</h1>
+<h1>Listar todas as Categorias</h1>

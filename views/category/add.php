@@ -1,1 +1,1 @@
-<h1>Nova Categoria</h1>
+<h1>Adicionar uma Class Categoria</h1>
