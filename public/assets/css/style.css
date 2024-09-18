@@ -1,0 +1,24 @@
+.maeError {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Garantir que a página ocupe 100% da altura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divError {
+  text-align: center; /* Centraliza o texto dentro da div */
+  padding: 20px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento */
+}
+
+.divError img {
+  max-width: 100%; /* Garante que a imagem se ajuste ao container */
+  height: auto;
+}
+
+.btn {
+  margin-top: 20px; /* Adiciona um espaçamento acima do botão */
+}

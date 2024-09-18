@@ -1,8 +1,5 @@
 <?php
-
-/* 
-    Class: Category.php
-*/
+// Class: Category.php
 
 /* 
     A declaração declare(strict_types=1); em PHP serve para ativar o modo de tipagem estrita em um arquivo PHP. Isso significa que o PHP passará a verificar de forma mais rigorosa a compatibilidade entre os tipos de dados declarados nas suas funções e os valores que você passa para elas.
